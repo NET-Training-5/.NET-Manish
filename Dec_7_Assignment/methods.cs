@@ -55,4 +55,24 @@ class method
             Console.WriteLine();
         }
     }
+
+    public (short, short) FindMinMax(params short[] numbers)
+    {
+        short min = short.MaxValue, max = short.MinValue;
+
+        foreach (var num in numbers)
+        {
+            if (num < min)
+            {
+                min = num;
+            }
+
+            if (num > max)
+            {
+                max = num;
+            }
+
+        }
+        return (min, max);
+    }
 }

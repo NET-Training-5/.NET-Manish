@@ -16,8 +16,11 @@
                 case 1:
                     // Storing user input numbers in arr variables
                     // Then passing it into GetMinMax Method
-                    var arr = mth.GetArray();
-                    mth.GetMinMax(arr);
+                    //var arr = mth.GetArray();
+                    //mth.FindMinMax(arr);
+                    var (min, max) = mth.FindMinMax(-1, -2, -3, -4, -5);
+                    Console.WriteLine("Minimum: " + min);
+                    Console.WriteLine("Maximum: " + max);
                     break;
                 case 2:
                     // Caling a function to get Symbol Pattern

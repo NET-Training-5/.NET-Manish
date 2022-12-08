@@ -45,24 +45,36 @@ class EntryPoint
         // string m = $"{name} is {age} years old"; // String Interpolation
         // Console.WriteLine(m);
 
-        Method m = new();
+        // Method m = new();
         // m.Print();
         // m.Print("I am Manish and I am god!!!");
         // m.GetMessage();
         // m.GetCovidResult("No");
         // var sum = m.AddS(23.5, 24.5);
-        Console.Write("Enter 1st Number: ");
-        int x = int.Parse(Console.ReadLine());
-        Console.WriteLine();
-        Console.Write("Enter 2nd Number: ");
-        int y = int.Parse(Console.ReadLine());
-        Console.WriteLine();
-        Console.Write("Enter 3rd Number: ");
-        int z = int.Parse(Console.ReadLine());
-        Console.WriteLine();
+        // Console.Write("Enter 1st Number: ");
+        // int x = int.Parse(Console.ReadLine());
+        // Console.WriteLine();
+        // Console.Write("Enter 2nd Number: ");
+        // int y = int.Parse(Console.ReadLine());
+        // Console.WriteLine();
+        // Console.Write("Enter 3rd Number: ");
+        // int z = int.Parse(Console.ReadLine());
+        // Console.WriteLine();
 
-        float avg = m.Average(x, y, z, 2, 3, 4);
-        Console.WriteLine("Average = " + avg);
+        // float avg = m.Average(x, y, z, 2, 3, 4);
+        // Console.WriteLine("Average = " + avg);
+
+        Person person1 = new();
+        person1.fullName = "Manish Kumar Tamang";
+        person1.dob = new DateTime(1999, 08, 22);
+        person1.address = "Kathmandu";
+        person1.gender = 'M';
+        person1.weight = 70.5f;
+        person1.height = 63.6f;
+
+        var z = person1.GetAge();
+        var y = person1.FindBMI();
+        Console.WriteLine($"Age is: {z:N0} and BMI is {y}");
 
 
     }
