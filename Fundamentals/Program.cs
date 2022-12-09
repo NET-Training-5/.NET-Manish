@@ -64,18 +64,21 @@ class EntryPoint
         // float avg = m.Average(x, y, z, 2, 3, 4);
         // Console.WriteLine("Average = " + avg);
 
-        Person person1 = new();
-        person1.fullName = "Manish Kumar Tamang";
-        person1.dob = new DateTime(1999, 08, 22);
-        person1.address = "Kathmandu";
-        person1.gender = 'M';
-        person1.weight = 70.5f;
-        person1.height = 63.6f;
+        //         Person person1 = new();
+        //         person1.fullName = "Manish Kumar Tamang";
+        //         person1.dob = new DateTime(1999, 08, 22);
+        //         person1.address = "Kathmandu";
+        //         person1.gender = 'M';
+        //         person1.weight = 70.5f;
+        //         person1.height = 63.6f;
 
-        var z = person1.GetAge();
-        var y = person1.FindBMI();
-        Console.WriteLine($"Age is: {z:N0} and BMI is {y}");
-
+        //         var z = person1.GetAge();
+        //         var y = person1.FindBMI();
+        //         Console.WriteLine($"Age is: {z:N0} and BMI is {y}");
+        Vehicle car1 = new();
+        car1.Brand = "Tata";
+        car1.Model = "Nexon EV";
+        car1.PrintDetails();
 
     }
 }
