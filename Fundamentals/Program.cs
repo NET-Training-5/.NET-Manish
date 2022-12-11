@@ -75,10 +75,20 @@ class EntryPoint
         //         var z = person1.GetAge();
         //         var y = person1.FindBMI();
         //         Console.WriteLine($"Age is: {z:N0} and BMI is {y}");
-        Vehicle car1 = new();
-        car1.Brand = "Tata";
-        car1.Model = "Nexon EV";
-        car1.PrintDetails();
+        // Vehicle car1 = new();
+        // car1.Brand = "Tata";
+        // car1.Model = "Nexon EV";
+        // car1.PrintDetails();
+
+        FiFa worldcup2018 = new();
+        worldcup2018.host = "Russia";
+        worldcup2018.year = new DateTime(2018, 2, 3);
+        worldcup2018.winner = "France";
+        worldcup2018.teams = new string[] { "France", "Germany", "Brazil" };
+
+        FiFa worldcup2022 = new("Qatar");
+        FiFa worldcup2002 = new("Qatar", new DateTime(2002, 1, 1), "Nepal", new string[] { "France", "Germany" });
+
 
     }
 }
