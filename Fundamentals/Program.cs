@@ -1,4 +1,5 @@
 ﻿using System;
+using PreBasic;
 class EntryPoint
 {
     public static void Main()
@@ -88,6 +89,11 @@ class EntryPoint
 
         FiFa worldcup2022 = new("Qatar");
         FiFa worldcup2002 = new("Qatar", new DateTime(2002, 1, 1), "Nepal", new string[] { "France", "Germany" });
+
+        FiFa.Groups = 10;
+
+        Selection sl = new(); // Can't be initialized object without referencing namespace...
+
 
 
     }

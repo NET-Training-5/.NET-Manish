@@ -1,5 +1,6 @@
 class FiFa
 {
+    public static byte Groups = 8;
     public string host;
     public DateTime year;
     public string winner;
