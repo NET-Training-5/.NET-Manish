@@ -2,10 +2,15 @@
 {
     public static void Main()
     {
-        Anime an = new();
-        an.animeName = "Kimetsu No Yaiba";
-        an.author = "Koyoharu Gotouge";
-        an.Genre = "Shonen manga/Comic Category";
-        an.PrintDetails();
+        // Assignment of 7th Dec
+        // Anime an = new();
+        // an.animeName = "Kimetsu No Yaiba";
+        // an.author = "Koyoharu Gotouge";
+        // Console.WriteLine(an.animeName);
+        // an.Genre = "Shonen manga/Comic Category";
+        // an.PrintDetails();
+        //-------------------------------------------------------
+
+
     }
 }
