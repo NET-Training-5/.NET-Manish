@@ -81,18 +81,42 @@ class EntryPoint
         // car1.Model = "Nexon EV";
         // car1.PrintDetails();
 
-        FiFa worldcup2018 = new();
-        worldcup2018.host = "Russia";
-        worldcup2018.year = new DateTime(2018, 2, 3);
-        worldcup2018.winner = "France";
-        worldcup2018.teams = new string[] { "France", "Germany", "Brazil" };
+        // FiFa worldcup2018 = new();
+        // worldcup2018.host = "Russia";
+        // worldcup2018.year = new DateTime(2018, 2, 3);
+        // worldcup2018.winner = "France";
+        // worldcup2018.teams = new string[] { "France", "Germany", "Brazil" };
 
-        FiFa worldcup2022 = new("Qatar");
-        FiFa worldcup2002 = new("Qatar", new DateTime(2002, 1, 1), "Nepal", new string[] { "France", "Germany" });
+        // FiFa worldcup2022 = new("Qatar");
+        // FiFa worldcup2002 = new("Qatar", new DateTime(2002, 1, 1), "Nepal", new string[] { "France", "Germany" });
 
-        FiFa.Groups = 10;
+        // FiFa.Groups = 10;
 
-        Selection sl = new(); // Can't be initialized object without referencing namespace...
+        // Selection sl = new(); // Can't be initialized object without referencing namespace...
+
+        // C c1 = new();
+
+        // c1.x
+
+        // Reactangle r1 = new(43.5f, 12.7f);
+        // var ar = r1.GetArea();
+        // var pr = r1.GetPerimeter();
+
+        // Square s1 = new(2.3f);
+        // var sa = s1.GetArea();
+        // var sp = s1.GetPerimeter();
+
+        IShape shape = new Reactangle(43.5f, 12.7f);
+        var ar = shape.GetArea();
+        var pr = shape.GetPerimeter();
+
+        shape = new Square(2.3f);
+        var sa = shape.GetArea();
+        var sp = shape.GetPerimeter();
+
+        shape = new Circle(2.3f);
+        var ca = shape.GetArea();
+        var cp = shape.GetPerimeter();
 
 
 
