@@ -106,17 +106,26 @@ class EntryPoint
         // var sa = s1.GetArea();
         // var sp = s1.GetPerimeter();
 
-        IShape shape = new Reactangle(43.5f, 12.7f);
-        var ar = shape.GetArea();
-        var pr = shape.GetPerimeter();
+        // IShape shape = new Reactangle(43.5f, 12.7f);
+        // var ar = shape.GetArea();
+        // var pr = shape.GetPerimeter();
 
-        shape = new Square(2.3f);
-        var sa = shape.GetArea();
-        var sp = shape.GetPerimeter();
+        // shape = new Square(2.3f);
+        // var sa = shape.GetArea();
+        // var sp = shape.GetPerimeter();
 
-        shape = new Circle(2.3f);
-        var ca = shape.GetArea();
-        var cp = shape.GetPerimeter();
+        // shape = new Circle(2.3f);
+        // var ca = shape.GetArea();
+        // var cp = shape.GetPerimeter();
+
+        // Generic g = new();
+        // g.PrintDetails<string>("sfsaf");
+        // g.PrintDetails<bool>(false);
+        // g.PrintDetails<char>('M');
+        // g.PrintDetails<int>(98494519);
+
+        FileIO fi = new();
+        fi.CreateFile();
 
 
 
