@@ -125,7 +125,7 @@ class EntryPoint
         // g.PrintDetails<int>(98494519);
 
         FileIO fi = new();
-        fi.CreateFile();
+        fi.CreateDirectory();
 
 
 

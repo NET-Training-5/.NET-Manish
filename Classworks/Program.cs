@@ -11,6 +11,7 @@
         // an.PrintDetails();
         //-------------------------------------------------------
 
-
+        DirectoryAndFiles df = new();
+        df.CreateDirectoriesAndFiles();
     }
 }
