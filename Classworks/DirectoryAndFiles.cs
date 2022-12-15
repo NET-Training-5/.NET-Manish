@@ -23,4 +23,11 @@ class DirectoryAndFiles
         }
 
     }
+
+    public void GetFileMetaData()
+    {
+        FileInfo info = new FileInfo(@"G:\gitCloning\.NET-Manish\readme.md");
+
+        var size = info.Length / 1024 + " KB";
+    }
 }
