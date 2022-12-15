@@ -15,11 +15,11 @@ class DirectoryAndFiles
 
         for (int i = 1; i < 11; i++)
         {
-            string childFilePath = rootFolderPath + "\\Folder" + i;
-            Directory.CreateDirectory(childFilePath);
+            string fullPath = rootFolderPath + "\\Folder" + i;
+            Directory.CreateDirectory(fullPath);
             string fileName = $"{i}.txt";
-            string fullPath = @$"{childFilePath}\{fileName}";
-            File.WriteAllText(fullPath, $"I am in file {i}");
+            string childFilePath = @$"{fullPath}\{fileName}";
+            File.WriteAllText(childFilePath, $"I am in file {i}");
         }
 
     }
