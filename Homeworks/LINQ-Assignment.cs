@@ -18,10 +18,7 @@ class LinqAssignment
 
         var multipleOf5and7 = num.Where(num => num % 5 == 0 && num % 7 == 0);
 
-        foreach (int x in multipleOf5and7)
-        {
-            Console.Write(x + " ");
-        }
+        DisplayValues(multipleOf5and7);
 
     }
 
@@ -31,10 +28,17 @@ class LinqAssignment
 
         var lessThan100andEndis0 = num.Where(num => num < 100 && num % 10 == 0);
 
-        foreach (int x in lessThan100andEndis0)
+        DisplayValues(lessThan100andEndis0);
+    }
+
+    void DisplayValues(IEnumerable<int> elements)
+    {
+
+        foreach (int x in elements)
         {
             Console.Write(x + " ");
         }
+
     }
 
 
