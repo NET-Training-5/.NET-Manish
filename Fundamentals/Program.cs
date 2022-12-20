@@ -5,6 +5,10 @@ class EntryPoint
     public static void Main()
     {
 
+
+        ParallelAndAsync pas = new();
+        pas.WriteParallelCode();
+
         // menu m = new();
         // m.main_menu();
         // byte ch = byte.Parse(Console.ReadLine());
@@ -124,8 +128,8 @@ class EntryPoint
         // g.PrintDetails<char>('M');
         // g.PrintDetails<int>(98494519);
 
-        FileIO fi = new();
-        fi.CreateDirectory();
+        // FileIO fi = new();
+        // fi.CreateDirectory();
 
 
 
