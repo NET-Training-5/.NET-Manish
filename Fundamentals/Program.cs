@@ -7,7 +7,7 @@ class EntryPoint
 
 
         ParallelAndAsync pas = new();
-        pas.WriteParallelCode();
+        pas.PrimalityTest();
 
         // menu m = new();
         // m.main_menu();
