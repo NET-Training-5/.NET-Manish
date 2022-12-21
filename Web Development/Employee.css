@@ -1,0 +1,19 @@
+.pColor {
+    color: blueviolet;
+}
+
+.pFont {
+    font-size: 40px;
+}
+
+#employeeSection {
+    background-color: gainsboro;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.buttonStyle {
+    border-radius: 30px;
+}
