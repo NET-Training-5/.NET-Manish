@@ -1,16 +1,30 @@
-<h2>Hello There!!!</h2>
+<h1>Hello There!!!</h1>
 
 @{
-    @* for (int i = 1; i <= 100; i++)
-        {
-        <h1>@i</h1>
-        } *@
+    int h = 19;
+    <br>
+    <h3><u>Multiplication Table of 19:</u></h3>
+    for (int i = 1; i <= 10; i++)
+    {
+        var mul = @h * @i;
+        <h5>@h * @i = @mul</h5>
+    }
+    <br>
+    <h3><u>Numbers From 1 to 100:</u></h3>
+
+    for (int i = 1; i <= 100; i++)
+    {
+        <h5>@i</h5>
+    }
+    <br>
+    <h3><u>Multiples of (3 and 5) Less Than 50:</u></h3>
+
 
     for (int i = 1; i <= 50; i++)
     {
         if (@i % 3 == 0 && @i % 5 == 0)
         {
-            <h1>@i</h1>
+            <h5>@i</h5>
         }
 
     }
