@@ -1,0 +1,28 @@
+@model (int, int)
+@{
+    (int from, int to) = Model;
+}
+
+<h1>Hello There!!!</h1>
+
+<div class="container">
+    <div class="row">
+        @{
+            <br>
+            <h3><u>Multiplication Table from @from to @to:</u></h3>
+            @for (int i = from; i <= to; i++)
+            {
+                <div class="col">
+                    @for (byte j = 1; j <= 10; j++)
+                    {
+                        var mul = i * j; 
+                        <h5>@i * @j = @mul</h5>
+                    }
+                </div>
+
+            }
+
+
+        }
+    </div>
+</div>
