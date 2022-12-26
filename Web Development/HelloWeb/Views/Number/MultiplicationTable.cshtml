@@ -1,0 +1,17 @@
+@model int
+@{
+    int number = Model;
+}
+
+<h1>Hello There!!!</h1>
+
+@{
+    <br>
+    <h3><u>Multiplication Table of @number:</u></h3>
+    for (int i = 1; i <= 10; i++)
+    {
+        var mul = number * i;
+        <h5>@number * @i = @mul</h5>
+    }
+
+}
