@@ -1,0 +1,24 @@
+﻿Human Resources
+============================
+
+Entities
+========================
+- Employees (Id, Name, Gender, Email, Address, Dob, JoinDate, Department, Designation etc.)
+- Departments
+- Teams
+- Designations
+- Benefits
+- Appraisals
+
+- Hiring
+- Timesheet
+
+Reporting
+==================
+- Dashboard
+- Reports
+
+Security
+==========================
+- Authnetication
+- Role based authorization
