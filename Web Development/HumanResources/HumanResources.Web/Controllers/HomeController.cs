@@ -1,4 +1,5 @@
-﻿using HumanResources.Web.Models;
+﻿using HumanResources.Web.Enums;
+using HumanResources.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -50,7 +51,7 @@ namespace HumanResources.Web.Controllers
 							Id = reader.GetInt32(0),
 							Name = reader.GetString(1),
 							Address = reader.GetString(2),
-							Gender = char.Parse(reader.GetString(3)),
+							Gender = (Gender)reader.GetInt32(3),
 							Dob = reader.GetDateTime(4),
 						};
 						employees.Add(emp);

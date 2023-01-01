@@ -4,8 +4,9 @@
     ViewData["Title"] = "Home Page";
 }
 
+<p class="display-2 text-center">Welcome to Human Resource Management Portal</p>
 
-<table class="table">
+@*<table class="table">
     <thead>
 		<tr>
 			<th>Id</th>
@@ -23,11 +24,11 @@
 					<td>@employee.Name</td>
 					<td>@employee.Address</td>
 					<td>@employee.Gender</td>
-					<td>@employee.Dob.ToString("MMMM dd, yyyy")</td>
+					<td>@employee.Dob?.ToString("MMMM dd, yyyy")</td>
 				</tr>
 			}
 	</tbody>
-</table>
+</table>*@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
