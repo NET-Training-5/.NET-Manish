@@ -2,7 +2,7 @@
 @model List<Employee>
 
 @{
-	ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Employees";
 }
 
 
@@ -17,6 +17,8 @@
 			<th>Join Date</th>
 			<th>Department</th>
 			<th>Designation</th>
+			<th>Actions</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -31,6 +33,8 @@
 				<td>@employee.JoinDate</td>
 				<td>@employee.Department</td>
 				<td>@employee.Designation</td>
+				<td><a href="/employee/edit/@employee.Id"><i class="bi bi-pencil-square"></i></a></td>
+				<td><a href="/employee/delete/@employee.Id"><i class="bi bi-trash text-danger"></i></a></td>
 
 			</tr>
 		}
