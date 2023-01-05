@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HumanResources.Web.Migrations
 {
     [DbContext(typeof(HRDbContext))]
-    partial class HRDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230103014258_DepartmentTable")]
+    partial class DepartmentTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,31 +48,6 @@ namespace HumanResources.Web.Migrations
                     b.ToTable("Departments");
                 });
 
-            modelBuilder.Entity("HumanResources.Web.Models.Designation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("DesignationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DesignationId");
-
-                    b.ToTable("Designations");
-                });
-
             modelBuilder.Entity("HumanResources.Web.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
@@ -81,11 +59,13 @@ namespace HumanResources.Web.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DesignationId")
-                        .HasColumnType("int");
+                    b.Property<string>("Designation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Dob")
                         .HasColumnType("datetime2");
@@ -106,47 +86,7 @@ namespace HumanResources.Web.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
-
-                    b.HasIndex("DesignationId");
-
                     b.ToTable("Employees");
-                });
-
-            modelBuilder.Entity("HumanResources.Web.Models.Designation", b =>
-                {
-                    b.HasOne("HumanResources.Web.Models.Designation", null)
-                        .WithMany("Designations")
-                        .HasForeignKey("DesignationId");
-                });
-
-            modelBuilder.Entity("HumanResources.Web.Models.Employee", b =>
-                {
-                    b.HasOne("HumanResources.Web.Models.Department", "Department")
-                        .WithMany("Employees")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HumanResources.Web.Models.Designation", "Designation")
-                        .WithMany()
-                        .HasForeignKey("DesignationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Department");
-
-                    b.Navigation("Designation");
-                });
-
-            modelBuilder.Entity("HumanResources.Web.Models.Department", b =>
-                {
-                    b.Navigation("Employees");
-                });
-
-            modelBuilder.Entity("HumanResources.Web.Models.Designation", b =>
-                {
-                    b.Navigation("Designations");
                 });
 #pragma warning restore 612, 618
         }
