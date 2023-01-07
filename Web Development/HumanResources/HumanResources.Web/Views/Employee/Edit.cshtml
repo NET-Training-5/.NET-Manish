@@ -3,9 +3,12 @@
 
 @{
 	ViewData["Title"] = "Edit";
+	var departments = ViewData["department"] as IEnumerable<SelectListItem>;
+	var designations = ViewData["designation"] as IEnumerable<SelectListItem>;
+
 }
 <div class="card p-5 shadow">
-	<form action="/employee/edit" method="post" class="row">
+	<form action="/employee/edit" method="post" class="row" enctype="multipart/form-data">
 		<input type="hidden" asp-for=Id />
 		<div class="col-md-6 mb-3">
 			<label asp-for=Name class="form-label"></label>
@@ -44,16 +47,20 @@
 		</div>
 		<div class="col-md-6 mb-3">
 			<label asp-for=Designation class="form-label"></label>
-			<input asp-for=Designation class="form-control">
+			<select asp-for=DesignationId asp-items=designations class="form-control"></select>
 		</div>
 
 		<div class="col-md-6 mb-3">
 			<label asp-for=Department class="form-label"></label>
-			<input asp-for=Department class="form-control">
+			<select asp-for=DepartmentId asp-items=departments class="form-control"></select>
 		</div>
 		<div class="col-md-6 mb-3">
 			<label asp-for=JoinDate class="form-label"></label>
 			<input asp-for=JoinDate class="form-control">
+		</div>
+		<div class="col-md-12 mb-3">
+			<label class="form-label" asp-for="ProfileImage">Choose Profile Picture</label>
+			<input asp-for="ProfileImage" class="form-control" id="customFile" />
 		</div>
 		<div class="col-md-6">
 			<button type="submit" class="btn btn-primary">Update</button>

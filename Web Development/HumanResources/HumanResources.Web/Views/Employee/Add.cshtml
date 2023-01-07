@@ -6,7 +6,7 @@
 	var designations = ViewData["designations"] as IEnumerable<SelectListItem>;
 }
 <div class="card p-5 shadow">
-	<form action="/employee/add" method="post" class="row">
+	<form action="/employee/add" method="post" class="row" enctype="multipart/form-data">
 		<div class="col-md-6 mb-3">
 			<label asp-for=Name class="form-label"></label>
 			<input asp-for=Name class="form-control">
@@ -55,7 +55,11 @@
 			<label asp-for=JoinDate class="form-label"></label>
 			<input asp-for=JoinDate class="form-control">
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-12 mb-3">
+			<label class="form-label" asp-for="ProfileImage">Choose Profile Picture</label>
+			<input asp-for="ProfileImage" class="form-control" id="customFile" />
+		</div>
+		<div class="col-md-10">
 			<button type="submit" class="btn btn-primary">Submit</button>
 			<button type="reset" class="btn btn-warning">Clear</button>
 		</div>

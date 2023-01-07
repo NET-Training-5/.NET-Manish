@@ -1,5 +1,6 @@
 ﻿using HumanResources.Web.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HumanResources.Web.Models
 {
@@ -18,6 +19,12 @@ namespace HumanResources.Web.Models
 		public Department Department { get; set; }
 		public int DepartmentId { get; set; }
 		public Designation Designation { get; set; }
+
+		[NotMapped]
+		public IFormFile ProfileImage { get; set; }
+		public string ProfilePath { get; set; }
 		public int DesignationId { get; set; }
+		//public Benefit Benefit { get; set; }
+		//public int BenefitId { get; set; }
 	}
 }
