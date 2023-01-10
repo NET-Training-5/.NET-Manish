@@ -1,5 +1,5 @@
-﻿@using HumanResources.Web.Enums;
-@model Employee
+﻿@using HumanResources.ApplicationCore.Enums;
+@model EmployeeViewModel
 
 @{
 	ViewData["Title"] = "Edit";
@@ -46,12 +46,12 @@
 			<input asp-for=Dob class="form-control">
 		</div>
 		<div class="col-md-6 mb-3">
-			<label asp-for=Designation class="form-label"></label>
+			<label asp-for=DesignationName class="form-label"></label>
 			<select asp-for=DesignationId asp-items=designations class="form-control"></select>
 		</div>
 
 		<div class="col-md-6 mb-3">
-			<label asp-for=Department class="form-label"></label>
+			<label asp-for=DepartmentName class="form-label"></label>
 			<select asp-for=DepartmentId asp-items=departments class="form-control"></select>
 		</div>
 		<div class="col-md-6 mb-3">

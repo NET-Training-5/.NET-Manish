@@ -1,4 +1,4 @@
-﻿using HumanResources.Web.Enums;
+﻿using HumanResources.ApplicationCore.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace HumanResources.Web.Models

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HumanResources.Web.Models;
+using HumanResources.Web.Mapper;
 
 namespace HumanResources.Web.Controllers
 {
@@ -27,9 +28,11 @@ namespace HumanResources.Web.Controllers
 			//var departments = await _context.Departments.ToListAsync();
 
 			//         return View();
+			var departments = await _context.Departments.Include(d => d.Employees).ToListAsync();
+			var departmentViewModels = departments.ToViewModel();
 
 			return _context.Departments != null ?
-						  View(await _context.Departments.ToListAsync()) :
+						  View(departmentViewModels) :
 						  Problem("Entity set 'HRDbContext.Departments'  is null.");
 
 		}
@@ -63,8 +66,9 @@ namespace HumanResources.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,EstablishedDate")] Department department)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,EstablishedDate")] DepartmentViewModel departmentViewModel)
         {
+            var department = departmentViewModel.ToModel();
             if (ModelState.IsValid)
             {
                 _context.Add(department);

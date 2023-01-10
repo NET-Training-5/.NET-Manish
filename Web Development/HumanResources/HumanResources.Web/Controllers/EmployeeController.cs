@@ -1,4 +1,6 @@
-﻿using HumanResources.Web.Models;
+﻿using HumanResources.Web.Mapper;
+using HumanResources.Web.Models;
+using HumanResources.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -16,8 +18,8 @@ public class EmployeeController : Controller
 	public async Task<IActionResult> Index()
 	{
 		var employees = await db.Employees.Include(e => e.Department).Include(e=>e.Designation).ToListAsync();
-
-		return View(employees);
+		var employeeViewModels = employees.ToViewModel();
+		return View(employeeViewModels);
 	}
 
 	public async  Task<IActionResult> Add()
@@ -40,10 +42,12 @@ public class EmployeeController : Controller
 	}
 
 	[HttpPost]
-	public IActionResult Add(Employee employee)
+	public IActionResult Add(EmployeeViewModel employeeViewModel)
 	{
-		var relativePath = SaveProfileImage(employee.ProfileImage);
-		employee.ProfilePath = relativePath;
+		var relativePath = SaveProfileImage(employeeViewModel.ProfileImage);
+		employeeViewModel.ProfilePath = relativePath;
+		var employee = employeeViewModel.ToModel();
+
 		db.Employees.Add(employee);
 		db.SaveChanges();
 
@@ -85,8 +89,8 @@ public class EmployeeController : Controller
 	[HttpPost]
 	public IActionResult Edit(Employee employee)
 	{
-		var relativePaths = SaveProfileImage(employee.ProfileImage);
-		employee.ProfilePath = relativePaths;
+		//var relativePaths = SaveProfileImage(employee.ProfileImage);
+		//employee.ProfilePath = relativePaths;
 
 		db.Employees.Update(employee);
 		db.SaveChanges();
@@ -94,7 +98,7 @@ public class EmployeeController : Controller
 		return RedirectToAction("Index");
 	}
 
-	public IActionResult Delete(int id)
+	public IActionResult Delete(int? id)
 	{
 		if (id == null || db.Departments == null)
 		{

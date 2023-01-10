@@ -1,4 +1,4 @@
-﻿namespace HumanResources.Web.Enums
+﻿namespace HumanResources.ApplicationCore.Enums
 {
 	public enum Gender
 	{

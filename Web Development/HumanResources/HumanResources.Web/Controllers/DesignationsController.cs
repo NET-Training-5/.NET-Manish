@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HumanResources.Web.Models;
+using HumanResources.Web.Mapper;
 
 namespace HumanResources.Web.Controllers
 {
@@ -21,8 +22,10 @@ namespace HumanResources.Web.Controllers
         // GET: Designations
         public async Task<IActionResult> Index()
         {
-              return _context.Designations != null ? 
-                          View(await _context.Designations.ToListAsync()) :
+			var designations = await _context.Designations.Include(d => d.Designations).ToListAsync();
+			var designationViewModels = designations.ToViewModel();
+			return _context.Designations != null ? 
+                          View(designationViewModels) :
                           Problem("Entity set 'HRDbContext.Designations'  is null.");
         }
 
@@ -55,8 +58,9 @@ namespace HumanResources.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Designation designation)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description")] DesignationViewModel designationViewModel)
         {
+            var designation = designationViewModel.ToModel();
             if (ModelState.IsValid)
             {
                 _context.Add(designation);

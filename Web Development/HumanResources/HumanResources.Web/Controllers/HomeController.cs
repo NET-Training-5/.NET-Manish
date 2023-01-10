@@ -1,4 +1,4 @@
-﻿using HumanResources.Web.Enums;
+﻿using HumanResources.ApplicationCore.Enums;
 using HumanResources.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
