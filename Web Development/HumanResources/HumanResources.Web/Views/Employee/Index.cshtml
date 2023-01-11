@@ -4,7 +4,10 @@
 @{
 	ViewData["Title"] = "Employees";
 }
-
+<form action="/employee/index" class="float-end ">
+	<input type="text" name="searchText" placeholder="Type Something" class="w-25 mb-2" />
+	<button type="submit">Search</button>
+</form>
 
 <table class="table">
 	<thead>

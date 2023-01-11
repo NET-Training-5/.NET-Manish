@@ -15,9 +15,13 @@ public class EmployeeController : Controller
 	{
 		db = _db;
 	}
-	public async Task<IActionResult> Index()
+	public async Task<IActionResult> Index(string searchText="")
 	{
 		var employees = await db.Employees.Include(e => e.Department).Include(e=>e.Designation).ToListAsync();
+
+		if(!string.IsNullOrEmpty(searchText))
+			employees = employees.Where(emp => emp.Name.Contains(searchText,StringComparison.InvariantCultureIgnoreCase)).ToList();
+
 		var employeeViewModels = employees.ToViewModel();
 		return View(employeeViewModels);
 	}
